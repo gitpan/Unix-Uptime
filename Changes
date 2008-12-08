@@ -1,0 +1,53 @@
+commit f9564865a1e5243de10a5fe3ebfaa785ab496636
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Dec 8 16:01:51 2008 -0500
+
+    Add copyright and license info
+    
+    Ignore dist_dir
+
+ 2 files changed, 8 insertions(+), 0 deletions(-)
+
+commit 7fdfde3237557fec5a068d29e8d2b7f60d06aa61
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Dec 8 15:50:22 2008 -0500
+
+    Reference repository url in META.yml
+
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+
+commit f107607646ca05beb072fa982d3784e301f120d9
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Dec 8 15:23:09 2008 -0500
+
+    Automatically generate a Changes file from git.
+    
+    Also, sign our distfiles.
+
+ 1 files changed, 62 insertions(+), 3 deletions(-)
+
+commit 50dfde90f838d83b9c963ca425d4b709f75fab35
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Fri Dec 5 16:08:32 2008 -0500
+
+    skip vim files for MANIFEST
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 774313f639194700273f41fc85b8f00004985fdc
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Fri Dec 5 16:06:06 2008 -0500
+
+    remove empty requires
+
+ 1 files changed, 0 insertions(+), 2 deletions(-)
+
+commit 00bbc908bd44d96ae5853a17cb8b1795d9e0cbdb
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Fri Dec 5 16:02:50 2008 -0500
+
+    Initial version
+
+ 6 files changed, 187 insertions(+), 0 deletions(-)
+
+# vim: set ft=git :
