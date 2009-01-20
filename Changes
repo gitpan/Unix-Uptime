@@ -1,3 +1,56 @@
+commit 9221c73a1da853cfe4d910ea7018ced55f8f92e5
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 20 01:43:36 2009 -0500
+
+    Mark version 0.2.
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 349ae1f88dc1dd33705d094426665f7bcf623f98
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 20 02:17:45 2009 -0500
+
+    "HiRes" mode.
+    
+    Support displaying the time with a higher precision. Precision will vary
+    between different operating systems / hardware.
+
+ 4 files changed, 82 insertions(+), 13 deletions(-)
+
+commit 35772b1abc07947e586bf40638b67e27c018e6ff
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 19 18:02:24 2009 -0500
+
+    Update docs.
+    
+    Update copyright date. Add a CONTRIBUTING section. Update gitweb url.
+
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+commit c383f7dc25d3e62b8fbc9dfeab6be990a733bdf0
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 19 17:26:53 2009 -0500
+
+    Split into one file per package, File::Spec-style.
+
+ 3 files changed, 47 insertions(+), 52 deletions(-)
+
+commit c6d8bf96edd88ebee8276e80b24a22c77dce0c2c
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 19 15:59:07 2009 -0500
+
+    Fix a silly scalar/list context bug.
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 55baee1a09ed9b77ebcea332f5023d3aa35623ec
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 19 15:56:50 2009 -0500
+
+    Keep all the pod in the right package namespace.
+
+ 1 files changed, 24 insertions(+), 23 deletions(-)
+
 commit f9564865a1e5243de10a5fe3ebfaa785ab496636
 Author: Mike Kelly <pioto@pioto.org>
 Date:   Mon Dec 8 16:01:51 2008 -0500

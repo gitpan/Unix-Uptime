@@ -1,8 +1,10 @@
 Build.PL
 lib/Unix/Uptime.pm
+lib/Unix/Uptime/FreeBSD.pm
+lib/Unix/Uptime/Linux.pm
 MANIFEST			This list of files
+META.yml
 t/000-compile.t
 t/001-uptime.t
-META.yml
 Changes    Added here by MyModuleBuilder
 SIGNATURE    Added here by Module::Build

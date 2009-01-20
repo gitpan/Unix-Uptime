@@ -1,24 +1,26 @@
 ---
 name: Unix-Uptime
-version: 0.1
+version: 0.2
 author:
   - 'Mike Kelly <pioto@pioto.org>'
-abstract: "Determine the current uptime, in seconds, across\ndifferent *NIX architectures"
+abstract: |-
+  Determine the current uptime, in seconds, across
+  different *NIX architectures
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+  repository: http://git.pioto.org/gitweb/Unix-Uptime.git
 build_requires:
   Module::Build: 0.28
-generated_by: Module::Build version 0.3
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
 provides:
   Unix::Uptime:
     file: lib/Unix/Uptime.pm
-    version: 0.1
-  Unix::Uptime::Freebsd:
-    file: lib/Unix/Uptime.pm
+    version: 0.2
+  Unix::Uptime::FreeBSD:
+    file: lib/Unix/Uptime/FreeBSD.pm
   Unix::Uptime::Linux:
-    file: lib/Unix/Uptime.pm
-resources:
-  license: http://dev.perl.org/licenses/
-  repository: "http://git.pioto.org/?p=Unix-Uptime.git"
+    file: lib/Unix/Uptime/Linux.pm
+generated_by: Module::Build version 0.280801
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
