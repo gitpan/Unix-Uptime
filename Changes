@@ -1,3 +1,80 @@
+commit 9838fb7cb1ebb32a0ea31d77a72ba9ee65a85dfc
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 26 18:29:11 2009 -0500
+
+    Prepare for 0.3.
+
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+commit 667db880689c03c28fe2eb64566a53c030e2baa3
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 26 17:42:51 2009 -0500
+
+    Initial support for OpenBSD and Darwin.
+    
+    This is currently untested, but, based upon data collected from a few
+    sources, it /should/ work.
+
+ 2 files changed, 31 insertions(+), 0 deletions(-)
+
+commit 12413233b0c3a0322bf3e01b6867dee44b6eda34
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Mon Jan 26 01:35:22 2009 -0500
+
+    Update tests.
+
+ 2 files changed, 38 insertions(+), 35 deletions(-)
+
+commit db138b5f8c8d217a33f9ac47d424a8c732201d4b
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Sun Jan 25 23:01:28 2009 -0500
+
+    Oops.
+
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit d06c948f1c4966cc51359f7f78f863728c611d63
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Sun Jan 25 22:56:19 2009 -0500
+
+    Add uptime_hires().
+    
+    Based upon a suggestion by David Leverton.
+
+ 3 files changed, 37 insertions(+), 15 deletions(-)
+
+commit a0818e4b7b65ef9653eada0f74c9ad01cbb61638
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Fri Jan 23 10:18:46 2009 -0500
+
+    Fix sanity check for when a system hasn't been up for a whole day yet.
+
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 6c48d77f0bd5c0da80fc48193d05503560e1804b
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 20 22:22:47 2009 -0500
+
+    Fail in a less obtuse way on unsupported operating systems.
+
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit aa3557927f1cc4e566217df3965afb6d31e654da
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 20 12:00:54 2009 -0500
+
+    Better sanity checks.
+
+ 1 files changed, 9 insertions(+), 1 deletions(-)
+
+commit 5d106461903111cfc13b248e3a9c7c1711bfd2f4
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 20 10:35:43 2009 -0500
+
+    Make sure Build.PL requires the right version of Module::Build.
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
 commit 9221c73a1da853cfe4d910ea7018ced55f8f92e5
 Author: Mike Kelly <pioto@pioto.org>
 Date:   Tue Jan 20 01:43:36 2009 -0500

@@ -3,14 +3,17 @@ package Unix::Uptime;
 use warnings;
 use strict;
 
-our $VERSION='0.2';
+our $VERSION='0.3';
 
 my %modules = (
     freebsd => 'FreeBSD',
     linux   => 'Linux',
+    openbsd => 'BSD',
+    darwin  => 'BSD',
 );
 
-my $module = $modules{$^O};
+my $module = $modules{$^O}
+    or die "Operating system type $^O is currently unupported";
 
 require "Unix/Uptime/$module.pm";
 our @ISA = ("Unix::Uptime::$module");
@@ -51,7 +54,7 @@ different *NIX architectures
   # "HiRes" mode
   use Unix::Uptime qw(:hires);
 
-  my $uptime = Unix::Uptime->uptime(); # 2345.123593
+  my $uptime = Unix::Uptime->uptime_hires(); # 2345.123593
 
 =head1 DESCRIPTION
 
@@ -60,9 +63,9 @@ the current system uptime, in seconds. It was born out of a desire to do
 this on non-Linux systems, without SNMP. If you want to use SNMP, there
 are pleanty of modules on CPAN already.
 
-Currently, this module just supports getting the uptime on Linux and
-FreeBSD. It should be easy enough to add support for other operating
-systems, though.
+Currently, this module just supports getting the uptime on Linux,
+FreeBSD, Darwin (Mac OS X), and OpenBSD. It should be easy enough to add
+support for other operating systems, though.
 
 =head1 OPTIONS
 
@@ -80,6 +83,13 @@ The following static (class) methods are available:
 This takes no arguments, and simply returns the number of seconds this
 system has been running. Depending on the operating system, this could
 be a whole integer, or a floating point number.
+
+=head2 uptime_hires()
+
+This is only available if the C<:hires> import tag is used. It returns
+the system uptime with a greater resolution than one second on supported
+platforms. On some platforms, its results may not be any more precise
+than C<uptime()>, though.
 
 =head1 SEE ALSO
 

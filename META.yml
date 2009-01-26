@@ -1,6 +1,6 @@
 ---
 name: Unix-Uptime
-version: 0.2
+version: 0.3
 author:
   - 'Mike Kelly <pioto@pioto.org>'
 abstract: |-
@@ -15,7 +15,9 @@ build_requires:
 provides:
   Unix::Uptime:
     file: lib/Unix/Uptime.pm
-    version: 0.2
+    version: 0.3
+  Unix::Uptime::BSD:
+    file: lib/Unix/Uptime/BSD.pm
   Unix::Uptime::FreeBSD:
     file: lib/Unix/Uptime/FreeBSD.pm
   Unix::Uptime::Linux:
