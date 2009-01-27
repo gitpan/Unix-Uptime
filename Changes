@@ -1,3 +1,27 @@
+commit ed081d36a9b0f7bb2fd5eecf7367cd96f6c024d8
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 27 01:42:32 2009 -0500
+
+    More doc tweaks. Minor version bump.
+
+ 4 files changed, 23 insertions(+), 7 deletions(-)
+
+commit c34a1ea36696fea4d0f9420b318f5de611bc96aa
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 27 01:22:01 2009 -0500
+
+    Update module dependencies and what not.
+
+ 2 files changed, 11 insertions(+), 1 deletions(-)
+
+commit 3602e2676da1f69fbbe0438148de0ae7def2936d
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Jan 27 01:02:06 2009 -0500
+
+    Update / add pod.
+
+ 4 files changed, 74 insertions(+), 8 deletions(-)
+
 commit 9838fb7cb1ebb32a0ea31d77a72ba9ee65a85dfc
 Author: Mike Kelly <pioto@pioto.org>
 Date:   Mon Jan 26 18:29:11 2009 -0500
