@@ -3,7 +3,7 @@ package Unix::Uptime;
 use warnings;
 use strict;
 
-our $VERSION='0.30_01';
+our $VERSION='0.30_02';
 $VERSION = eval $VERSION;
 
 my %modules = (
@@ -11,10 +11,11 @@ my %modules = (
     linux   => 'Linux',
     openbsd => 'BSD',
     darwin  => 'BSD',
+    netbsd  => 'BSD',
 );
 
 my $module = $modules{$^O}
-    or die "Operating system type $^O is currently unupported";
+    or die "Operating system type $^O is currently unsupported";
 
 require "Unix/Uptime/$module.pm";
 our @ISA = ("Unix::Uptime::$module");
