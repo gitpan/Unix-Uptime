@@ -1,6 +1,6 @@
 ---
 name: Unix-Uptime
-version: 0.31_01
+version: 0.32
 author:
   - 'Mike Kelly <pioto@pioto.org>'
 abstract: |-
@@ -18,16 +18,16 @@ build_requires:
 provides:
   Unix::Uptime:
     file: lib/Unix/Uptime.pm
-    version: 0.31_01
+    version: 0.32
   Unix::Uptime::BSD:
     file: lib/Unix/Uptime/BSD.pm
-    version: 0.31_01
+    version: 0.32
   Unix::Uptime::FreeBSD:
     file: lib/Unix/Uptime/FreeBSD.pm
-    version: 0.31_01
+    version: 0.32
   Unix::Uptime::Linux:
     file: lib/Unix/Uptime/Linux.pm
-    version: 0.31_01
+    version: 0.32
 generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

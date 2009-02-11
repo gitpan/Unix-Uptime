@@ -3,13 +3,13 @@ package Unix::Uptime::FreeBSD;
 use warnings;
 use strict;
 
-our $VERSION='0.31_01';
+our $VERSION='0.32';
 $VERSION = eval $VERSION;
 
 sub uptime {
     my $class = shift;
     
-    my $boottime = `sysctl kern.boottime`;
+    my $boottime = `/sbin/sysctl kern.boottime`;
     my ($boot_seconds,$boot_useconds) = $boottime =~ /\s+sec\s+=\s+(\d+),\s+usec\s+=\s+(\d+)/;
     return time() - $boot_seconds;
 }
@@ -21,7 +21,7 @@ sub uptime_hires {
         die "uptime_hires: you need to import Unix::Uptime with ':hires'";
     }
 
-    my $boottime = `sysctl kern.boottime`;
+    my $boottime = `/sbin/sysctl kern.boottime`;
     my ($boot_seconds,$boot_useconds) = $boottime =~ /\s+sec\s+=\s+(\d+),\s+usec\s+=\s+(\d+)/;
     my $time = Time::HiRes::gettimeofday();
     my $boot_time = $boot_seconds + ($boot_useconds * (10.0**-6));

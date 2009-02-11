@@ -3,7 +3,7 @@ package Unix::Uptime::BSD;
 use warnings;
 use strict;
 
-our $VERSION='0.31_01';
+our $VERSION='0.32';
 $VERSION = eval $VERSION;
 
 use DateTime::Format::Strptime;
@@ -11,7 +11,7 @@ use DateTime::Format::Strptime;
 sub uptime {
     my $class = shift;
 
-    my $boottime = `sysctl kern.boottime`;
+    my $boottime = `/sbin/sysctl kern.boottime`;
 
     $boottime =~ s/^\s*kern\.boottime\s*=\s*//;
     # OpenBSD:

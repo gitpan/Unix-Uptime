@@ -1,3 +1,37 @@
+commit e171a9c85e6a51b2580cc659001742fdf65777e3
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Feb 10 19:52:09 2009 -0500
+
+    Prepare for version 0.32
+
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+commit e6783da2590ff8af8bcfda988c6d095930b0bce9
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Thu Feb 5 22:09:03 2009 -0500
+
+    We need to put the missing module tests in a BEGIN.
+
+ 1 files changed, 8 insertions(+), 6 deletions(-)
+
+commit 29fd2691ccee134ce6a9f5a8a545564525c66bc6
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Thu Feb 5 22:01:54 2009 -0500
+
+    Skip :hires tests when it isn't supported.
+
+ 1 files changed, 9 insertions(+), 1 deletions(-)
+
+commit 38cda0debf1089447d32090a852c031a648a1bcb
+Author: Mike Kelly <pioto@pioto.org>
+Date:   Tue Feb 3 12:17:07 2009 -0500
+
+    Use an absolute path to sysctl.
+    
+    Some people don't have /sbin in their path...
+
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
 commit de077a5dbacb773795ec4e49d727b55b218ac33f
 Author: Mike Kelly <pioto@pioto.org>
 Date:   Sun Feb 1 00:21:31 2009 -0500
