@@ -1,6 +1,7 @@
 Build.PL
 lib/Unix/Uptime.pm
 lib/Unix/Uptime/BSD.pm
+lib/Unix/Uptime/BSD/Load.pm
 lib/Unix/Uptime/FreeBSD.pm
 lib/Unix/Uptime/Linux.pm
 MANIFEST			This list of files
@@ -9,5 +10,6 @@ README
 t/000-compile.t
 t/001-uptime.t
 t/002-uptime_hires.t
+t/003-load.t
 Changes    Added here by MyModuleBuilder
 SIGNATURE    Added here by Module::Build
