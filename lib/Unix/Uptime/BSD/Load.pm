@@ -3,13 +3,13 @@ package Unix::Uptime::BSD::Load;
 use warnings;
 use strict;
 
-our $VERSION='0.33_02';
+our $VERSION='0.34';
 $VERSION = eval $VERSION;
 
 sub load {
     my $class = shift;
 
-    $ENV{PATH} .= ':/usr/local/sbin:/usr/sbin:/sbin';
+    local $ENV{PATH} .= ':/usr/local/sbin:/usr/sbin:/sbin';
     my $loadavg = `sysctl vm.loadavg`;
 
     # OpenBSD:

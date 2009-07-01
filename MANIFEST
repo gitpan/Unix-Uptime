@@ -1,4 +1,12 @@
 Build.PL
+inc/Devel/AssertOS.pm
+inc/Devel/AssertOS/DragonflyBSD.pm
+inc/Devel/AssertOS/FreeBSD.pm
+inc/Devel/AssertOS/Linux.pm
+inc/Devel/AssertOS/MacOSX.pm
+inc/Devel/AssertOS/NetBSD.pm
+inc/Devel/AssertOS/OpenBSD.pm
+inc/Devel/CheckOS.pm
 lib/Unix/Uptime.pm
 lib/Unix/Uptime/BSD.pm
 lib/Unix/Uptime/BSD/Load.pm
