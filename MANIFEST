@@ -1,4 +1,5 @@
 Build.PL
+Changes
 inc/Devel/AssertOS.pm
 inc/Devel/AssertOS/DragonflyBSD.pm
 inc/Devel/AssertOS/FreeBSD.pm
@@ -13,11 +14,11 @@ lib/Unix/Uptime/BSD/Load.pm
 lib/Unix/Uptime/FreeBSD.pm
 lib/Unix/Uptime/Linux.pm
 MANIFEST			This list of files
-META.yml
 README
 t/000-compile.t
 t/001-uptime.t
 t/002-uptime_hires.t
 t/003-load.t
-Changes    Added here by MyModuleBuilder
+t/pod.t
+META.yml
 SIGNATURE    Added here by Module::Build

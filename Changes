@@ -1,370 +1,47 @@
-commit baae8131d08a6e7999f840561952a7af11fd9445
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jun 30 20:04:01 2009 -0400
+Changes for Unix::Uptime
 
-    Prepare for version 0.34
+0.36  Thu Oct 22 00:07:06 EDT 2009
+    - More internal cleaning.
+    - Fix load() tests for loads > 10.
 
- 5 files changed, 5 insertions(+), 5 deletions(-)
+0.34  Tue Jun 30 20:04:01 EST 2009
+    - Don't pollute $ENV{PATH}.
+    - Support for DragonFly BSD.
+    - Internal cleanups and improved diagnostics.
 
-commit 6a8a33be6b83499f907cf2df30716a1be522ef53
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jun 30 20:00:51 2009 -0400
+0.33_02  Tue Mar 24 19:17:52 EST 2009
+    - 0.33_01 wasn't built properly. Re-released & bumped.
 
-    Make the module loading voodoo a little less ugly.
+0.33_01  Tue Mar 24 19:01:47 EST 2009
+    - Initial load() implementation, for getting the 1, 5, and 15 minute
+      load averages.
 
- 1 files changed, 3 insertions(+), 2 deletions(-)
+0.3201  Thu Feb 12 01:33:29 EST 2009
+    - Another attempt to fix sysctl path handling for *BSD.
 
-commit 61a43a8edb7ecd95f26906f93eb09bb16a0c70e1
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jun 30 09:41:06 2009 -0400
+0.32  Tue Feb 10 19:52:09 EST 2009
+    - Attempt to fix path handling for *BSD.
+    - Skip tests when we're missing modules.
 
-    Be environmentally friendly.
-    
-    Localize $ENV{PATH} changes to minimize how much we mess around with
-    people's environment.
-    
-    Fixes: CPAN RT #46449
+0.31_01  Sun Feb  1 00:21:31 EST 2009
+    - Fix dependencies for NetBSD.
 
- 3 files changed, 5 insertions(+), 4 deletions(-)
+0.30_02  Sat Jan 31 13:34:04 EST 2009
+    - Initial support for NetBSD.
 
-commit 25de3ab2940131df8e5a0fc64c9ff96a5a90d3dc
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jun 30 09:37:54 2009 -0400
+0.30_01  Tue Jan 27 01:42:32 EST 2009
+    - Some internal cleanup.
 
-    Some more test diagnostics.
-    
-    This will hopefully help me track down some bugs others are having.
+0.3  Mon Jan 26 18:29:11 EST 2009
+    - Initial support for OpenBSD, Darwin.
+    - Add uptime_hires() for getting a "HiRes" uptime. uptime() is just
+      for second granularity.
 
- 3 files changed, 6 insertions(+), 3 deletions(-)
+0.2  Tue Jan 20 01:43:36 EST 2009
+    - "HiRes" mode.
+    - Fix a scalar/list context bug.
 
-commit 057bbb79914062c6d6ce8dbba722d649a8083600
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jun 30 09:36:26 2009 -0400
+0.1  Mon Dec  8 16:01:51 EST 2008
+    - Initial public release.
+    - Support for FreeBSD, Linux.
 
-    Use Devel::AssertOS
-
- 9 files changed, 551 insertions(+), 0 deletions(-)
-
-commit f5c143ca1c2869c4d6e1d2aacebbb4b432dd9546
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Thu Mar 26 00:12:42 2009 -0400
-
-    Support for DragonFly.
-
- 2 files changed, 10 insertions(+), 7 deletions(-)
-
-commit 9f6f78f0b1d0d7dca7879243a206690347238d56
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Mar 24 19:17:52 2009 -0400
-
-    Bump. I fail at making dists...
-
- 5 files changed, 6 insertions(+), 6 deletions(-)
-
-commit eb68ff4cfa37fdc45d636562a329ade28e154439
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Mar 24 18:54:33 2009 -0400
-
-    Initial load() support.
-    
-    Bump to 0.33_01
-
- 7 files changed, 95 insertions(+), 10 deletions(-)
-
-commit 6ceee2428d3f94bf1693a86ff799e41ab76e5f36
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Thu Feb 12 01:33:29 2009 -0500
-
-    Prepare for 0.3201
-
- 4 files changed, 4 insertions(+), 4 deletions(-)
-
-commit 83e8a5a0e40791ccb8545f631d0457fbe7849737
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Wed Feb 11 19:57:07 2009 -0500
-
-    Fix path for sysctl for realz.
-
- 2 files changed, 4 insertions(+), 2 deletions(-)
-
-commit e171a9c85e6a51b2580cc659001742fdf65777e3
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Feb 10 19:52:09 2009 -0500
-
-    Prepare for version 0.32
-
- 4 files changed, 4 insertions(+), 4 deletions(-)
-
-commit e6783da2590ff8af8bcfda988c6d095930b0bce9
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Thu Feb 5 22:09:03 2009 -0500
-
-    We need to put the missing module tests in a BEGIN.
-
- 1 files changed, 8 insertions(+), 6 deletions(-)
-
-commit 29fd2691ccee134ce6a9f5a8a545564525c66bc6
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Thu Feb 5 22:01:54 2009 -0500
-
-    Skip :hires tests when it isn't supported.
-
- 1 files changed, 9 insertions(+), 1 deletions(-)
-
-commit 38cda0debf1089447d32090a852c031a648a1bcb
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Feb 3 12:17:07 2009 -0500
-
-    Use an absolute path to sysctl.
-    
-    Some people don't have /sbin in their path...
-
- 2 files changed, 3 insertions(+), 3 deletions(-)
-
-commit de077a5dbacb773795ec4e49d727b55b218ac33f
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Sun Feb 1 00:21:31 2009 -0500
-
-    Version 0.31_01... I fail at releasing properly.
-
- 5 files changed, 10 insertions(+), 9 deletions(-)
-
-commit dd3cbdfbfe47ac21dc607197302a82412a1a79f5
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Sat Jan 31 13:34:04 2009 -0500
-
-    Version bump.
-
- 4 files changed, 4 insertions(+), 4 deletions(-)
-
-commit aee936a17a209efcf36cb6fc45bf711ffc4014a1
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Sat Jan 31 13:32:22 2009 -0500
-
-    Support NetBSD.
-
- 2 files changed, 3 insertions(+), 0 deletions(-)
-
-commit 5b6e56f08a90653eca697623039e7384154b673a
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Wed Jan 28 15:58:52 2009 -0500
-
-    update .gitignore
-
- 1 files changed, 1 insertions(+), 0 deletions(-)
-
-commit 4c121f153e8d6c998b85bd71f0acbe7b5b6c6e48
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 27 13:02:11 2009 -0500
-
-    fix spelling
-
- 1 files changed, 1 insertions(+), 1 deletions(-)
-
-commit ed081d36a9b0f7bb2fd5eecf7367cd96f6c024d8
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 27 01:42:32 2009 -0500
-
-    More doc tweaks. Minor version bump.
-
- 4 files changed, 23 insertions(+), 7 deletions(-)
-
-commit c34a1ea36696fea4d0f9420b318f5de611bc96aa
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 27 01:22:01 2009 -0500
-
-    Update module dependencies and what not.
-
- 2 files changed, 11 insertions(+), 1 deletions(-)
-
-commit 3602e2676da1f69fbbe0438148de0ae7def2936d
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 27 01:02:06 2009 -0500
-
-    Update / add pod.
-
- 4 files changed, 74 insertions(+), 8 deletions(-)
-
-commit 9838fb7cb1ebb32a0ea31d77a72ba9ee65a85dfc
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 26 18:29:11 2009 -0500
-
-    Prepare for 0.3.
-
- 2 files changed, 6 insertions(+), 4 deletions(-)
-
-commit 667db880689c03c28fe2eb64566a53c030e2baa3
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 26 17:42:51 2009 -0500
-
-    Initial support for OpenBSD and Darwin.
-    
-    This is currently untested, but, based upon data collected from a few
-    sources, it /should/ work.
-
- 2 files changed, 31 insertions(+), 0 deletions(-)
-
-commit 12413233b0c3a0322bf3e01b6867dee44b6eda34
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 26 01:35:22 2009 -0500
-
-    Update tests.
-
- 2 files changed, 38 insertions(+), 35 deletions(-)
-
-commit db138b5f8c8d217a33f9ac47d424a8c732201d4b
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Sun Jan 25 23:01:28 2009 -0500
-
-    Oops.
-
- 1 files changed, 4 insertions(+), 4 deletions(-)
-
-commit d06c948f1c4966cc51359f7f78f863728c611d63
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Sun Jan 25 22:56:19 2009 -0500
-
-    Add uptime_hires().
-    
-    Based upon a suggestion by David Leverton.
-
- 3 files changed, 37 insertions(+), 15 deletions(-)
-
-commit a0818e4b7b65ef9653eada0f74c9ad01cbb61638
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Fri Jan 23 10:18:46 2009 -0500
-
-    Fix sanity check for when a system hasn't been up for a whole day yet.
-
- 1 files changed, 2 insertions(+), 0 deletions(-)
-
-commit 6c48d77f0bd5c0da80fc48193d05503560e1804b
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 20 22:22:47 2009 -0500
-
-    Fail in a less obtuse way on unsupported operating systems.
-
- 1 files changed, 2 insertions(+), 1 deletions(-)
-
-commit aa3557927f1cc4e566217df3965afb6d31e654da
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 20 12:00:54 2009 -0500
-
-    Better sanity checks.
-
- 1 files changed, 9 insertions(+), 1 deletions(-)
-
-commit 5d106461903111cfc13b248e3a9c7c1711bfd2f4
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 20 10:35:43 2009 -0500
-
-    Make sure Build.PL requires the right version of Module::Build.
-
- 1 files changed, 1 insertions(+), 1 deletions(-)
-
-commit 9221c73a1da853cfe4d910ea7018ced55f8f92e5
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 20 01:43:36 2009 -0500
-
-    Mark version 0.2.
-
- 1 files changed, 1 insertions(+), 1 deletions(-)
-
-commit 349ae1f88dc1dd33705d094426665f7bcf623f98
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Tue Jan 20 02:17:45 2009 -0500
-
-    "HiRes" mode.
-    
-    Support displaying the time with a higher precision. Precision will vary
-    between different operating systems / hardware.
-
- 4 files changed, 82 insertions(+), 13 deletions(-)
-
-commit 35772b1abc07947e586bf40638b67e27c018e6ff
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 19 18:02:24 2009 -0500
-
-    Update docs.
-    
-    Update copyright date. Add a CONTRIBUTING section. Update gitweb url.
-
- 2 files changed, 11 insertions(+), 3 deletions(-)
-
-commit c383f7dc25d3e62b8fbc9dfeab6be990a733bdf0
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 19 17:26:53 2009 -0500
-
-    Split into one file per package, File::Spec-style.
-
- 3 files changed, 47 insertions(+), 52 deletions(-)
-
-commit c6d8bf96edd88ebee8276e80b24a22c77dce0c2c
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 19 15:59:07 2009 -0500
-
-    Fix a silly scalar/list context bug.
-
- 1 files changed, 1 insertions(+), 1 deletions(-)
-
-commit 55baee1a09ed9b77ebcea332f5023d3aa35623ec
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Jan 19 15:56:50 2009 -0500
-
-    Keep all the pod in the right package namespace.
-
- 1 files changed, 24 insertions(+), 23 deletions(-)
-
-commit f9564865a1e5243de10a5fe3ebfaa785ab496636
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Dec 8 16:01:51 2008 -0500
-
-    Add copyright and license info
-    
-    Ignore dist_dir
-
- 2 files changed, 8 insertions(+), 0 deletions(-)
-
-commit 7fdfde3237557fec5a068d29e8d2b7f60d06aa61
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Dec 8 15:50:22 2008 -0500
-
-    Reference repository url in META.yml
-
- 1 files changed, 5 insertions(+), 0 deletions(-)
-
-commit f107607646ca05beb072fa982d3784e301f120d9
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Mon Dec 8 15:23:09 2008 -0500
-
-    Automatically generate a Changes file from git.
-    
-    Also, sign our distfiles.
-
- 1 files changed, 62 insertions(+), 3 deletions(-)
-
-commit 50dfde90f838d83b9c963ca425d4b709f75fab35
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Fri Dec 5 16:08:32 2008 -0500
-
-    skip vim files for MANIFEST
-
- 1 files changed, 1 insertions(+), 0 deletions(-)
-
-commit 774313f639194700273f41fc85b8f00004985fdc
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Fri Dec 5 16:06:06 2008 -0500
-
-    remove empty requires
-
- 1 files changed, 0 insertions(+), 2 deletions(-)
-
-commit 00bbc908bd44d96ae5853a17cb8b1795d9e0cbdb
-Author: Mike Kelly <pioto@pioto.org>
-Date:   Fri Dec 5 16:02:50 2008 -0500
-
-    Initial version
-
- 6 files changed, 187 insertions(+), 0 deletions(-)
-
-# vim: set ft=git :

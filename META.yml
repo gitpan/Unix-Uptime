@@ -1,6 +1,6 @@
 ---
 name: Unix-Uptime
-version: 0.34
+version: 0.36
 author:
   - 'Mike Kelly <pioto@pioto.org>'
 abstract: |-
@@ -11,27 +11,27 @@ resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Unix-Uptime
   license: http://dev.perl.org/licenses/
   repository: http://git.pioto.org/gitweb/Unix-Uptime.git
-configure_requires:
-  Module::Build: 0.28
 build_requires:
+  Module::Build: 0.28
+configure_requires:
   Module::Build: 0.28
 provides:
   Unix::Uptime:
     file: lib/Unix/Uptime.pm
-    version: 0.34
+    version: 0.36
   Unix::Uptime::BSD:
     file: lib/Unix/Uptime/BSD.pm
-    version: 0.34
+    version: 0.36
   Unix::Uptime::BSD::Load:
     file: lib/Unix/Uptime/BSD/Load.pm
-    version: 0.34
+    version: 0.36
   Unix::Uptime::FreeBSD:
     file: lib/Unix/Uptime/FreeBSD.pm
-    version: 0.34
+    version: 0.36
   Unix::Uptime::Linux:
     file: lib/Unix/Uptime/Linux.pm
-    version: 0.34
-generated_by: Module::Build version 0.3
+    version: 0.36
+generated_by: Module::Build version 0.340201
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
