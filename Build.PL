@@ -5,6 +5,10 @@ use warnings;
 
 use Module::Build 0.28;
 
+my $IS_BSD = $^O =~ /^(?:darwin|dragonfly|(?:free|open|net)bsd)$/;
+my $WANT_XS = $IS_BSD;
+$WANT_XS = 0 if $ENV{NO_XS};
+
 my $build = Module::Build->new(
     module_name     => 'Unix::Uptime',
     license         => 'perl',
@@ -14,12 +18,10 @@ my $build = Module::Build->new(
     },
     build_requires  => {
         'Module::Build' => 0.28,
-    },
-    requires => {
-        ($^O =~ /^(darwin|(open|net)bsd)$/ ? ('DateTime::Format::Strptime' => 0) : ()),
+        ($WANT_XS ? ('ExtUtils::CBuilder' => 0) : ()),
     },
     recommends => {
-        ($^O =~ /^(freebsd)$/ ? ('Time::HiRes' => 0) : ()),
+        ($IS_BSD ? ('Time::HiRes' => 0) : ()),
     },
     meta_merge => {
         resources => {
@@ -29,5 +31,6 @@ my $build = Module::Build->new(
         },
     },
 );
+$build->xs_files({}) unless $WANT_XS;
 $build->create_build_script();
 

@@ -3,36 +3,89 @@ package Unix::Uptime::BSD;
 use warnings;
 use strict;
 
-our $VERSION='0.36';
-$VERSION = eval $VERSION;
+my $HAVE_XS = eval { require Unix::Uptime::BSD::XS; };
 
-use DateTime::Format::Strptime;
+our $VERSION='0.37';
+$VERSION = eval $VERSION;
 
 sub uptime {
     my $class = shift;
 
-    local $ENV{PATH} .= ':/usr/local/sbin:/usr/sbin:/sbin';
-    my $boottime = `sysctl kern.boottime`;
+    my ($boot_seconds, $boot_useconds) = $HAVE_XS
+        ? $class->_boottime_xs()
+        : $class->_boottime_sysctl_b();
 
-    $boottime =~ s/^\s*kern\.boottime\s*=\s*//;
-    # OpenBSD:
-    #   kern.boottime=Mon Jan  5 14:00:50 2009
-    # Darwin:
-    #   kern.boottime = Wed Jan 21 12:49:52 2009
-    # NetBSD:
-    #   kern.boottime = Mon Jan  5 15:30:35 2009
-    my $strp = DateTime::Format::Strptime->new(
-        pattern => '%a%t%b%t%d%t%T%t%Y',
-    );
-    my $dt = $strp->parse_datetime($boottime)
-        or die "Failed to parse kern.boottime: ",$strp->errstr;
-    return time() - $dt->epoch();
+    return (time() - $boot_seconds);
 }
 
-no warnings qw(once);
-*uptime_hires = \&uptime;
+sub _boottime_sysctl_b {
+    local $ENV{PATH} .= ':/usr/local/sbin:/usr/sbin:/sbin';
+    my $raw_boottime = `sysctl -b kern.boottime`;
 
-use base 'Unix::Uptime::BSD::Load';
+    return unpack("ll", $raw_boottime);
+}
+
+sub _boottime_xs {
+    my $class = shift;
+
+    return Unix::Uptime::BSD::XS::sysctl_kern_boottime();
+}
+
+sub uptime_hires {
+    my $class = shift;
+
+    my ($boot_seconds, $boot_useconds) = $HAVE_XS
+        ? $class->_boottime_xs()
+        : $class->_boottime_sysctl_b();
+
+    my $time = Time::HiRes::gettimeofday();
+
+    my $boot_time = $boot_seconds + ($boot_useconds * (10.0**-6));
+    return ($time - $boot_time);
+}
+
+sub load {
+    my $class = shift;
+
+    my ($load1, $load5, $load15) = $HAVE_XS
+        ? $class->_load_xs()
+        : $class->_load_sysctl();
+
+    return ($load1, $load5, $load15);
+}
+
+sub _load_xs {
+    my $class = shift;
+
+    my ($load1, $load5, $load15, $fscale) = Unix::Uptime::BSD::XS::sysctl_vm_loadavg();
+
+    return (
+        sprintf("%.2f",$load1/$fscale),
+        sprintf("%.2f",$load5/$fscale),
+        sprintf("%.2f",$load15/$fscale));
+}
+
+sub _load_sysctl {
+    my $class = shift;
+
+    local $ENV{PATH} .= ':/usr/local/sbin:/usr/sbin:/sbin';
+    my $loadavg = `sysctl vm.loadavg`;
+
+    # OpenBSD:
+    #   vm.loadavg=2.54 2.47 2.48
+    # FreeBSD:
+    #   vm.loadavg: { 0.53 0.24 0.19 }
+
+    my ($load1, $load5, $load15) = $loadavg =~ /vm\.loadavg\s*[:=]\s*\{?\s*(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)/;
+
+    return ($load1, $load5, $load15);
+}
+
+sub load_hires {
+    my $class = shift;
+
+    require Time::HiRes;
+}
 
 1;
 

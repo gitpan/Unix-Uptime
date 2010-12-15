@@ -10,11 +10,12 @@ inc/Devel/AssertOS/OpenBSD.pm
 inc/Devel/CheckOS.pm
 lib/Unix/Uptime.pm
 lib/Unix/Uptime/BSD.pm
-lib/Unix/Uptime/BSD/Load.pm
-lib/Unix/Uptime/FreeBSD.pm
+lib/Unix/Uptime/BSD/XS.pm
+lib/Unix/Uptime/BSD/XS.xs
 lib/Unix/Uptime/Linux.pm
 MANIFEST			This list of files
 README
+samples/uptime.pl
 t/000-compile.t
 t/001-uptime.t
 t/002-uptime_hires.t

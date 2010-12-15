@@ -3,7 +3,7 @@ package Unix::Uptime::Linux;
 use warnings;
 use strict;
 
-our $VERSION='0.36';
+our $VERSION='0.37';
 $VERSION = eval $VERSION;
 
 sub uptime {
@@ -19,7 +19,7 @@ sub uptime {
 sub uptime_hires {
     my $class = shift;
 
-    unless ($class->want_hires()) {
+    unless ($class->_want_hires()) {
         die "uptime_hires: you need to import Unix::Uptime with ':hires'";
     }
 
