@@ -8,7 +8,7 @@
 #include <sys/sysctl.h>
 #if defined(__OpenBSD__)
 #include <uvm/uvm_param.h>
-#elif !defined(__APPLE__)
+#elif defined(__FreeBSD__) || defined(__DragonFly__)
 #include <vm/vm_param.h>
 #endif
 
@@ -38,7 +38,7 @@ sysctl_vm_loadavg()
         if (-1 == sysctl(mib, 2, &load, &len, NULL, 0)) {
             croak("sysctl: %s", strerror(errno));
         }
-        EXTEND(SP, 2);
+        EXTEND(SP, 4);
         PUSHs(sv_2mortal(newSViv(load.ldavg[0])));
         PUSHs(sv_2mortal(newSViv(load.ldavg[1])));
         PUSHs(sv_2mortal(newSViv(load.ldavg[2])));
