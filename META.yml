@@ -1,34 +1,34 @@
 ---
-name: Unix-Uptime
-version: 0.3701
+abstract: 'Determine the current uptime, in seconds, and load'
 author:
   - 'Mike Kelly <pioto@pioto.org>'
-abstract: |-
-  Determine the current uptime, in seconds, and load
-  averages, across different *NIX architectures
-license: perl
-resources:
-  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Unix-Uptime
-  license: http://dev.perl.org/licenses/
-  repository: http://git.pioto.org/gitweb/Unix-Uptime.git
+build_requires:
+  ExtUtils::CBuilder: 0
+  Module::Build: 0.28
 configure_requires:
   Module::Build: 0.28
-build_requires:
-  Module::Build: 0.28
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.132140'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Unix-Uptime
 provides:
   Unix::Uptime:
     file: lib/Unix/Uptime.pm
-    version: 0.3701
+    version: 0.4000
   Unix::Uptime::BSD:
     file: lib/Unix/Uptime/BSD.pm
-    version: 0.3701
+    version: 0.4000
   Unix::Uptime::BSD::XS:
     file: lib/Unix/Uptime/BSD/XS.pm
-    version: 0.3701
+    version: 0.4000
   Unix::Uptime::Linux:
     file: lib/Unix/Uptime/Linux.pm
-    version: 0.3701
-generated_by: Module::Build version 0.3
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+    version: 0.4000
+resources:
+  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Unix-Uptime
+  license: http://dev.perl.org/licenses/
+  repository: https://github.com/pioto/Unix-Uptime
+version: 0.4000

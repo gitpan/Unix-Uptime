@@ -5,7 +5,7 @@ use strict;
 
 my $HAVE_XS = eval { require Unix::Uptime::BSD::XS; };
 
-our $VERSION='0.3701';
+our $VERSION='0.4000';
 $VERSION = eval $VERSION;
 
 sub uptime {
@@ -93,7 +93,7 @@ __END__
 
 =head1 NAME
 
-Unix::Uptime::BSD - BSD implementation of Unix::Uptime (for Darwin, OpenBSD, and NetBSD)
+Unix::Uptime::BSD - BSD implementation of Unix::Uptime (for Darwin, DragonFly, and *BSD)
 
 =head1 SEE ALSO
 

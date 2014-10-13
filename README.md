@@ -1,8 +1,14 @@
-Unix-Uptime is Copyright (C) 2008-2009, Mike Kelly.
+Unix-Uptime is Copyright (C) 2008-2014, Mike Kelly.
 
 This is a simple module that allows you to get the current system
-uptime, in seconds, and the current load average. See the Unix::Uptime
-perldoc for more information.
+uptime, in seconds, and the current load average.
+
+On *BSD systems, this involves using an optional XS module, with a
+fallback on parsing the output of the 'syslog' command. If you wish to
+avoid building the XS module, set the 'NO_XS' environment variable to
+some true value before running `perl Build.PL`.
+
+See the Unix::Uptime perldoc for more information.
 
 LICENSE INFORMATION
 
@@ -15,3 +21,4 @@ This program is distributed in the hope that it will be
 useful, but without any warranty; without even the implied
 warranty of merchantability or fitness for a particular purpose.
 
+[![Build Status](https://travis-ci.org/pioto/Unix-Uptime.svg?branch=develop)](https://travis-ci.org/pioto/Unix-Uptime)

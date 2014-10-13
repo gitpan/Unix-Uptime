@@ -3,10 +3,11 @@ package Unix::Uptime;
 use warnings;
 use strict;
 
-our $VERSION='0.3701';
+our $VERSION='0.4000';
 $VERSION = eval $VERSION;
 
 my %modules = (
+    cygwin    => 'Linux',
     freebsd   => 'BSD',
     dragonfly => 'BSD',
     linux     => 'Linux',
@@ -143,7 +144,7 @@ this point, I won't commit to an API freeze until version 1.0.
 =head1 CONTRIBUTING
 
 This project is developed using git. The repository may be browsed at:
-L<http://git.pioto.org/gitweb/Unix-Uptime.git>
+L<https://github.com/pioto/Unix-Uptime>
 
 Patches in git-format-patch style are preferred. Either send them to me
 by email, or open an RT ticket
@@ -155,7 +156,7 @@ Mike Kelly <pioto@pioto.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2008-2009, Mike Kelly.
+Copyright (C) 2008-2014, Mike Kelly.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl 5.10.0. For more details, see the full text
